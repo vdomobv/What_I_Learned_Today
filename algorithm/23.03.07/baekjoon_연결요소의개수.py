@@ -1,10 +1,9 @@
-# 42%에서 오답
 import sys
 from collections import deque
 
 n, m = map(int, sys.stdin.readline().strip().split())
 if m == 0:
-    print(0)
+    print(n)
 else:
     arr = [[] for _ in range(1001)]
 
