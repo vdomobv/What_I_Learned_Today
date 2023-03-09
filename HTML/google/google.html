@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Roboto:wght@500&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .btn {
+            margin: 10px;
+        }
+
+        img {
+            width: 25px;
+            height: 25px;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .logo {
+            width: 300px;
+            height: 300px;
+        }
+
+        .search {
+            border-radius: 50px;
+            border: 1px solid grey;
+        }
+
+
+        input {
+            width: 600px;
+            border: 0;
+            height: 30px;
+        }
+
+        .search {
+            height: 40px;
+            width: 780px;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .icon {
+            margin: 5px;
+        }
+
+        .content {
+            height: 500px;
+            clear: both;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="btn left">Google 정보</div>
+            <div class="btn left">스토어</div>
+            <div class="btn left">Gmail</div>
+            <div class="btn right">
+                <img src="img/profile.png" alt="">
+            </div>
+            <div class="btn right">
+                <img src="img/app_grid.png" alt="">
+            </div>
+            <div class="btn right">이미지</div>
+        </div>
+        <div class="content">
+            <div class="title">
+                <img class="logo" src="img/google.png" alt="">
+            </div>
+            <div class="search">
+                <div class="icon"><img src="img/search.png" alt=""></div>
+                <div><input class="icon" type="text" name="" id=""></div>
+                <div class="icon">
+                    <img src="img/keyboard.png" alt="">
+                </div>
+                <div class="icon">
+                    <img src="img/mic.png" alt="">
+                </div>
+                <div class="icon">
+                    <img src="img/camera.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
