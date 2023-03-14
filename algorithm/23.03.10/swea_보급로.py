@@ -1,4 +1,3 @@
-# 테스트 케이스 6번부터 오답
 from collections import deque
 
 dx = [0, 1, 0, -1]
