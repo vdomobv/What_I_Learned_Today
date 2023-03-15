@@ -11,13 +11,16 @@
 
     <ul>
       <li>
-        <a href="/profile/">profile</a>
+        <a href="{% url 'myapp:profile' %}">profile</a>
       </li>
       <li>
-        <a href="/fruits/">fruits</a>
+        <a href="{% url 'myapp:fruits' %}">fruits</a>
       </li>
       <li>
-        <a href="/template/">template</a>
+        <a href="{% url 'myapp:template' %}">template</a>
+      </li>
+      <li>
+        <a href="{% url 'myapp2:hello' 'jieun' %}">hello</a>
       </li>
     </ul>
   </body>

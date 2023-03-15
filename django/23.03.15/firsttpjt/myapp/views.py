@@ -6,7 +6,7 @@ def index(request):
 
 
 def profile(request):
-    name = "minseok"
+    name = "jieun"
     age = 25
 
     info = {"name": name, "age": age}
