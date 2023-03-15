@@ -34,36 +34,24 @@ def select(i, tmp):
 result = []
 q = deque([])
 
+
 def chicken_dist(r):
-    visited = [[-1]*n for _ in range(n)]
-    dist = 0
-
-    for si, sj in r:
-        visited[si][sj] = 0
-        q.append((si, sj))
-        while q:
-            ci, cj = q.pop()
-            for d in range(4):
-                ni, nj = ci+dx[d], cj+dy[d]
-                if 0 <= ni < n and 0 <= nj < n:
-                    if arr[ni][nj] == 0 and (visited[ni][nj] == -1 or visited[ni][nj] > visited[ci][cj] + 1):
-                        visited[ni][nj] = visited[ci][cj] + 1
-                        q.append((ni, nj))
-                    elif arr[ni][nj] == 1 and (visited[ni][nj] == -1 or visited[ni][nj] > visited[ci][cj] + 1):
-                        visited[ni][nj] = visited[ci][cj] + 1
-
-    for hi, hj in house:
-        if visited[hi][hj]:
-            dist += visited[hi][hj]
-    return dist
+    c_dist = [0] * len(house)
+    for ci, cj in r:
+        for h in range(len(house)):
+            if c_dist[h] == 0:
+                c_dist[h] = abs(house[h][0]-ci)+abs(house[h][1]-cj)
+            elif c_dist[h] > abs(house[h][0]-ci)+abs(house[h][1]-cj):
+                c_dist[h] = abs(house[h][0]-ci)+abs(house[h][1]-cj)
+    return sum(c_dist)
 
 select(0, [])
 min_dist = 2*n**3
 
+
 for r in result:
-    print(r)
     tmp_dist = chicken_dist(r)
-    if tmp_dist < min_dist:
+    if 0 < tmp_dist < min_dist:
         min_dist = tmp_dist
 
 print(min_dist)
