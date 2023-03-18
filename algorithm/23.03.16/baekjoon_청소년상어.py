@@ -56,8 +56,6 @@ def fish_move():
                     #     print()
                     # print("-------------------")
 
-
-
 # 상어가 먹을 수 있는 물고기 번호 합의 최대값
 # 물고기가 없으면 이동할 수 없음.
 # 물고기를 먹고 해당 물고기의 이동 방향을 가지게 됨.
@@ -89,20 +87,20 @@ def shark_move(eat, q):
 
 # 상, 좌상, 좌, 좌하, 하, 우하, 우, 우상
 # 0   1     2   3    4     5   6    7
-for _ in range(5):
-    fish_move()
-    # 디버깅
-    for i in range(4):
-        for j in range(4):
-            print(fish[i][j], end=" ")
-        print()
-    print("====================")
 
-    shark_move(arr[0][0], q)
-    fish[0][0][1] = lastD
+fish_move()
+shark_move(arr[0][0], q)
+fish[0][0][1] = lastD
 
-print(lastD)
-print(maxV)
+# print(lastD)
+# print(maxV)
+
+# # 디버깅
+# for i in range(4):
+#     for j in range(4):
+#         print(fish[i][j], end=" ")
+#     print()
+# print("====================")
         
     
 
