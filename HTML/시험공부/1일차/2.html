@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="2.css">
+</head>
+
+<body>
+    <div class="header">
+        <img src="/HTML/images/화면 캡처 2023-03-18 214530.png" alt="">
+    </div>
+    <div>
+        <div class="top box">
+            <h1>SSAFY 학생 건강 설문</h1>
+        </div>
+        <form action="">
+            <div class="box">
+                <label for="name">이름을 기재해주세요.</label><br>
+                <input type="text" id="name" placeholder="내 답변">
+            </div>
+            <div class="box">
+                <label for="region">지역을 선택해주세요.</label><br>
+                <select name="region" id="region">
+                    <option value="none">선택</option>
+                    <option value="Gumi">구미</option>
+                    <option value="Gwangju">광주</option>
+                    <option value="Daejeon">대전</option>
+                    <option value="BUK">부울경</option>
+                    <option value="Seoul">서울</option>
+                </select>
+            </div>
+            <div class="box">
+                <label for="">오늘의 체온을 선택해주세요.</label><br>
+                <input type="radio" id="lt37" value="lt37"><label for="lt37">37도 미만</label><br>
+                <input type="radio" id="gt37" value="gt37"><label for="gt37">37도 이상</label>
+            </div>
+            <input type="submit" name="" id="submit" value="제출">
+        </form>
+        <p>Google 설문지를 통해 비밀번호를 제출하지 마세요.</p>
+
+    </div>
+</body>
+
+</html>

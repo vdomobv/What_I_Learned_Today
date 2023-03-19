@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 문서 최상위 요소 -->
+
+<head>
+    <!-- 문서 메타데이터 요소
+문서 제목, 인코딩, 스타일, 외부파일 로딩 등, 일반적으로 브라우저에 나타나지 않는 내용
+-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 브라우저 상단 타이틀 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- 외부 리소스 연결 요소 -->
+    <style>
+
+    </style>
+    <!-- CSS 직접 작성 -->
+</head>
+
+<body>
+    <!-- 문서 본문 요소 : 실제 화면 구성과 관련된 내용 -->
+    <div>
+        <h1>
+            Web
+        </h1>
+        <hr>
+
+        <p>
+            웹사이트란 웹 브라우저를 통해서 접속하는 웹페이지들의 모음<br>
+            웹 페이지는 글, 그림, 동영상 등 여러가지 정보를 담고 있으며, 링크를 통해 다른 웹 페이지로 이동이 가능함. 링크를 통해 여러웹 페이지를 연결한 것이 웹사이트<br>
+        </p>
+    </div>
+
+    <div>
+        <h2>HTML</h2>
+
+        <ul>
+            <li>
+                HTML(Hyper Text Markup Language) : 웹 페이지를 작성(구조화)하기 위한 언어
+            </li>
+            <li>
+                Hyper Text : 참조(하이퍼링크)를 통해 사용자가 한 문서에서 다른 문서로 즉시 접근 할 수 있는 텍스트
+            </li>
+            <li>
+                Markup Language : 태그 등을 통해 문서나 데이터의 구조를 명시하는 언어
+            </li>
+            <li>
+                <ul>
+                    기본구조
+                    <li>html : 문서의 최상위 요소</li>
+                    <li>head : 문서 메타데이터 요소, 문서제목, 인코딩, 스타일, 외부 파일 로딩등, 일반적으로 브라우저에 나타나지 않는 내용<br>
+                    title(브라우저 상단 타이틀), link(외부 리소스 연결 요소), style(CSS 직접 작성)</li>
+                    <li>body : 문서 본문 요소, 실제 화면 구성과 관련된 내용</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>
+            요소(Element)
+        </h3>
+        <p>
+            HTML 요소는 시작 태그와 종료 태그 그리고 태그 사이에 위치한 내용으로 구성<br>
+            태그(Element)는 컨텐츠(내용)를 감싸는 것으로 그 정보의 성격과 의미를 정의<br>
+
+            내용이 없는 태그들<br>
+            * <i> br, hr, img, input, link, meta </i>
+            <br>
+            요소는 중첩될 수 있음<br>
+            요소의 중첩을 통해 하나의 문서를 구조화 <br>
+            여는 태그와 닫는 태그의 쌍을 잘 확인해야 함<br>
+            오류를 반환하는 것이 아닌 그냥 레이아웃이 깨진 상태로 출력되기 때문에, 디버깅이 힘들어질 수 있음<br>
+        </p>
+
+        <h3>속성(Attribute)</h3>
+        <p>
+            각 태그별로 사용할 수 있는 속성이 다르다<br>
+            속성은 속성명과 속성값으로 이루어져 있다. <br>
+            속성을 통해 태그의 부가적인 정보를 설정할 수 있다<br>
+            요소는 속성을 가질 수 있으며, 경로나 크기와 같은 추가적인 정보를 제공한다<br>
+            요소의 시작 태그에 작성하며 보통 이름과 값이 하나의 쌍으로 존재한다<br>
+            태그와 상관없이 사용 가능한 속성들도 있다<br>
+            속성 지정 스타일 가이드 : 공백 없이, 쌍따옴표("") 사용<br>
+            <br>
+            <b>
+                HTML Global Attribute
+            </b>
+            <br>
+            id : 문서 전체에서 유일한 고유 식별자 지정<br>
+            class : 공백으로 구분된 해당 요소의 클래스의 목록<br>
+            style : inline 스타일<br>
+        </p>
+
+        <h3>태그 종류</h3>
+        <table>
+            <tr>
+                <td>태그</td>
+                <td>설명</td>
+            </tr>
+            <tr>
+                <td>&lt;a&gt;&lt;/a&gt;</td>
+                <td>href 속성을 활용하여 다른 url로 연결하는 하이퍼링크 생성</td>
+            </tr>
+            <tr>
+                <td>&lt;b&gt;&lt;/b&gt;<br>
+                    &lt;strong&gt;&lt;/strong&gt;</td>
+                <td>굵은 글씨 요소<br>
+                    중요한 내용을 강조하고자 하는 요소
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;i&gt;&lt;/i&gt;<br>
+                    &lt;em&gt;&lt;/em&gt;</td>
+                <td>기울임 글씨 요소<br>
+                    중요한 내용을 강조하고자 하는 요소
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;br&gt;</td>
+                <td>텍스트 내에 줄 바꿈 생성</td>
+            </tr>
+            <tr>
+                <td>&lt;hr&gt;</td>
+                <td>주제를 분리하기 위한 수평선</td>
+            </tr>
+            <tr>
+                <td>&lt;img&gt;</td>
+                <td>src속성을 활용하여 이미지 표현</td>
+            </tr>
+            <tr>
+                <td>&lt;span&gt;&lt;/span&gt;</td>
+                <td>의미 없는 인라인 컨테이너
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;div&gt;&lt;/div&gt;</td>
+                <td>의미 없는 블록 레벨 컨테이너
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;p&gt;&lt;/p&gt;</td>
+                <td>하나의 문단
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;form&gt;&lt;/form&gt;</td>
+                <td>사용자의 정보(데이터)를 제출하기 위한 요소
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;input&gt;&lt;/input&gt;</td>
+                <td>다양한 타입을 가지는 일벽 데이터 유형과 위젯이 제공됨
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;label&gt;&lt;/label&gt;</td>
+                <td>label을 클릭하여 input 자체의 초점을 맞추거나 활성화 시킬 수 있음<br>
+                    input에 id속성을 label 속성에 for 속성을 활용하여 상호 연관을 시킴<br>
+                    type : 동일한 범주에 속하는 항목들은 name을 통일하고, 선택된 항목의 값은 value로 지정함
+                    <ul>
+                        <li>text : 일반 텍스트</li>
+                        <li>password : 입력 시 값이 보이지 않고 문자를 특수기호(*)로 표현</li>
+                        <li>email : 이메일 형식이 아닌 경우 form 제출 불가</li>
+                        <li>number : min, max, step 속성을 활용하여 숫자 범위 설정 가능</li>
+                        <li>file : accept 속성을 활용하여 파일 타입 지정 가능</li>
+                        <li>checkbox : 다중 선택</li>
+                        <li>radio : 단일 선택</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <h2>CSS</h2>
+        <p>Cascading Style Sheets <br>
+            스타일을 지정하기 위한 언어</p>
+        <img style="width: 400px; float: left;" src="/HTML/images/화면 캡처 2023-03-18 102222.png" alt="">
+        <p>
+            - CSS 구문은 선택자를 통해 스타일을 지정할 HTML요소를 선택<br>
+            - 중괄호 안에서는 속성과 값, 하나의 쌍으로 이루어진 선언을 진행<br>
+            - 각 쌍은 선택한 요소의 속성, 속성에 부여할 값을 의미를<br>
+            - 속성(Property) : 어떤 스타일 기능을 변경할지 결정<br>
+            - 값(Value) : 어떻게 스타일 기능을 변경할 지 결정<br>
+            CSS 정의 방법 : <br> 인라인(inline), 내부 참조(embedding - &lt;style&gt;), 외부참조(link file) - 분리된 CSS 파일<br>
+        </p>
+        <div>
+            <h3>개발자 도구</h3>
+            <p>웹 브라우저 크롬에서 제공하는 개발과 관련된 다양한 기능을 제공 <br>
+                주요기능
+            <ul>
+                <li>Elements : 해당요소의 HTML 태그, DOM 탐색 및 CSS 확인 및 변경</li>
+                <ul>
+                    <li>styles : 해당요소에 선언된 모든 CSS</li>
+                    <li>computed : 해당 요소에 최종 계산된 CSS</li>
+                    <li>Event Listeners : 해당 요소에 적용된 이벤트 (JS)</li>
+                </ul>
+                <li>Sources, Network, Performance, Application, Security, Audits 등</li>
+            </ul>
+            </p>
+        </div>
+        <h3>선택자 유형</h3>
+        <p>
+        <ul>
+            <li>기본 선택자<br>
+                <ul>
+                    <li>전체 선택자</li>
+                    <li>요소 선택자 : HTML 태그를 직접 선택</li>
+                    <li>클래스 선택자 : 마침표(.)문자로 시작하며, 해당 클래스가 적용된 항목을 선택</li>
+                    <li>아이디 선택자 : # 문자로 시작하며, 해당 아이디가 적용된 항목을 선택 <br>
+                        일반적으로 하나의 문서에 1번만 사용. 여러번 사용해도 동작하지만, 단일 id를 사용하는 것을 권장</li>
+                    <li>속성 선택자</li>
+                </ul>
+            </li>
+            <li>결합자<br>
+                <ul>
+                    <li>자손 결합자</li>
+                    <li>자식 결합자</li>
+                </ul>
+            </li>
+        </ul>
+        </p>
+        <h3 style="color: red;">CSS 적용 우선순위 (p. 3/7일 교재 91p) </h3>
+        <p>
+            !important > 인라인 > id > class,속성 > 요소<br>
+            <i style="color: red;">HTML 파일내 속성이 정의되는 순서와 상관 없이, 나중에 정의된 CSS가 우선순위</i>
+        </p>
+        <h3>CSS 상속</h3>
+        <p>
+            CSS는 상속을 통해 부모 요소의 속성을 자식에게 상속한다. 속성 중에는 상속되는 것과 상속되지 않는 것들이 있다. <br>
+            - 상속 되는 것 : Text관련 요소(font, color, text-align), opacity, visivility 등<br>
+            - 상속 되지 않는 것 : Box 관련 요소(width, height, margin, padding, border, box-sizing, display),
+            position 관련 요소(position, top/right/bottom/left, z-index) 등
+        </p>
+        <h3>CSS 원칙</h3>
+        <ol>
+            <li><b>Box model, 위에서 아래로, 왼짝에서 오른쪽으로 쌓인다. </b>
+                <div>Box model 구성 요소 (shorthand : 상하좌우, +, ÷, 시계방향)
+                    <ul>
+                        <li>margin : 테두리 바깥의 외부 여백 배경색을 지정할 수 없다.</li>
+                        <li>border : 테두리 영역</li>
+                        <li>padding : 테두리 안쪽의 내부 여백 요소에 적용된 배경색, 이미지는 padding까지 적용</li>
+                        <li>content : 글이나 이미지 등 요소의 실제 내용</li>
+                    </ul>
+                </div>
+                <div>
+                    box-sizing
+                    <ul>
+                        <li>content-box : padding을 제외한 순수 contents 영역만을 box로 지정, 기본적인 box-sizing</li>
+                        <li>border-box : border의 너비까지 box로 지정</li>
+
+                    </ul>
+                </div>
+            </li>
+            <br>
+            <li><b>display에 따라 크기와 배치가 달라진다.</b> <br>
+                <b style="color: red;"> 정렬은 부모가 해줌! </b>
+                <ul>
+                    <li>display: block <br>
+                        줄 바꿈이 일어나는 요소, 다른 요소를 밀어낸다. <br>
+                        화면 크기 전체의 가로 폭을 차지한다. <br>
+                        블록 레벨 요소 안에 인라인 레벨 요소가 들어갈 수 있음. <br>
+                        대표적인 블록 레벨 요소 : div/ ul, ol, li/ p / hr / form 등
+                    </li>
+                    <li>display: inline <br>
+                        줄 바꿈이 일어나지 않는 행의 일부 요소<br>
+                        content를 마크업 하고 있는 만큼만 가로 폭을 차지한다. <br>
+                        width, height, margin-top, margin-bottom을 지정할 수 없다. <br>
+                        상하 여백은 line-height로 지정한다. <br>
+                        대표적인 인라인 레벨 요소 : span / a / img / input, label / b, em, i, strong 등
+                    </li>
+                    <li>display: inline-block <br>
+                        block과 inline 레벨 요소의 특징을 모두 가짐
+                        inline처럼 한 줄에 표시 가능하고, block처럼 width, height, margin 속성을 모두 지정할 수 있음<br>
+                    </li>
+                    <li>display: none <br>
+                        <b>해당 요소를 화면에 표시하지 않고, 공간조차 부여되지 않음.</b><br>
+                        <b>이와 비슷한 visibility : hidden은 해당 요소가 공간은 차지하나 화면에 표시만 하지 않는다.</b>
+                    </li>
+                </ul>
+            </li>
+            <li><b>CSS position : 문서 상에서 요소의 위치를 지정</b>
+                <ul>
+                    <li>static : 모든 태그의 기본값
+                        <ul>
+                            <li>일반적인 요소의 배치 순서에 따름</li>
+                            <li>부모 요소 내에서 배치 될 때는 부모 요소의 위치를 기준으로 배치 됨</li>
+                        </ul>
+                    </li>
+                    <li>relative : 상대위치
+                        <ul>
+                            <li>자기 자신의 static 위치를 기준으로 이동(normal flow 유지)</li>
+                            <li>레이아웃에서 요소가 차지하는 공간은 static일 때와 같음 (normal position 대비 offset)</li>
+                        </ul>
+                    </li>
+                    <li>absolute : 절대위치
+                        <ul>
+                            <li>요소를 일반적인 문서 흐름에서 제거 후 레이아웃에 공간을 차지하지 않음 (normal floww 벗어남)</li>
+                            <li><b>static이 아닌</b> 가장 가까이 있는 부모/조상 요소를 기준으로 이동 (없는 경우 body)</li>
+                        </ul>
+                    </li>
+                    <li>fixed : 고정 위치
+                        <ul>
+                            <li>요소를 일반적인 문서 흐름에서 제거 후 레이아웃에 공간을 차지하지 않음 (normal flow에서 벗어남)</li>
+                            <li><b>부모 요소와 관계없이 viewport를 기준으로 이동</b><br>
+                                스크롤 시에도 항상 같은 곳에 위치함</li>
+                        </ul>
+                    </li>
+                    <li>sticky : 스크롤에 따라 static -> fixed 로 변경
+                        <ul>
+                            <li>속성을 적용한 박스는 평소에 문서 안(상위 요소 안)에서 position : static 상태와 같이 일반적인 흐름에 따르지만, <br>
+                                스크롤 위치가 임계점에 이르면 position : fixed와 같이 박스를 화면에 고정할 수 있는 속성</li>
+                        </ul>
+                    </li>
+            </li>
+        </ol>
+        <h3>CSS Layout</h3>
+        <p>
+
+        <ul>float
+            <li>박스를 왼쪽 혹은 오른쪽으로 이동시켜 텍스틀르 포함 인라인 요소들이 주변을 wrapping 하도록 함</li>
+            <li>요소가 Normal flow를 벗어나도록 함</li>
+            <br>
+            <li><b>Float 속성</b>
+                <ul>
+                    <li>none : 기본값</li>
+                    <li>left : 요소를 왼쪽으로 띄움</li>
+                    <li>right : 요소를 오른쪽으로 띄움</li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul>Flexbox : 행과 열 형태로 아이템들을 배치하는 1차원 레이아웃 모델<br>
+            이전까지 Normal Flow를 벗어나는 수단으로 Float 혹은 Position을 사용했다. <br>
+            Float와 Position은 수직정렬, 아이템의 너비, 높이, 간격을 동일하게 배치하는 것이 어려웠다. <br>
+            Flexbox는 이러한 것들을 쉽고 간편하게 할 수 있다. <br>
+            
+            <li>축 - flex-direction : row
+                <ul>
+                    <li>main axis (메인 축)</li>
+                    <li>cross axis (교차 축)</li>
+                </ul>
+            <li>
+                구성 요소
+                <ul>
+                    <li>
+                        Flex Container (부모 요소) : Flex Item들이 놓여 있는 영역 <br>
+                        display : flex 혹은 display : inline-flex로 지정
+                        <ol>Flex 속성
+                            <li>배치 설정
+                                <ul>
+                                    <li>
+                                        flex-direction : Main axis 기준 방향 설정 <br>
+                                        역방향의 경우 html 태그 선언 순서와 시각적으로 다르니 유의 <br>
+                                        - row, row-reverse, column, column-reverse
+                                    </li>
+                                    <li>
+                                        flex-wrap : 아이템이 컨테이너를 벗어나는 경우 해당 영역 내에 배치되도록 설정 (줄넘김) <br>
+                                        - wrap, nowrap
+                                    </li>
+                                    <li>
+                                        flex-flow : flex-direction과 flex-wrap의 shorthand, flex-direction과 flex-wrap에 대한
+                                        설정값을 차례로 작성<br>
+                                        ex. flex-flow : row nowrap;
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>공간 나누기
+                                <ul>
+                                    <li>justify-content (main axis) : flex-start, flex-end, center, space-between,
+                                        space-around, space-evenly</li>
+                                    <li>align-content (cross axis) : flex-start, flex-end, center, space-between,
+                                        space-around, space-evenly</li>
+                                </ul>
+                            </li>
+                            <li>정렬 cross axis 중심으로
+                                <ul>
+                                    <li>align-items (모든 아이템) : stretch, flex-start, flex-end, center, baseline</li>
+                                    <li>align-self (개별 아이템) : stretch, flex-start, flex-end, center</li>
+                                </ul>
+                            </li>
+                            <li>기타 속성
+                                <ul>
+                                    <li>flex-grow : 남은 영역을 아이템에 분배</li>
+                                    <li>order : 배치순서</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        Flex Item (자식 요소) : 컨테이너에 속해 있는 컨텐츠(박스) <br>
+                        컨테이너 안에 아이템들이 주축을 기준으로 배치 <br>
+                        각각의 아이템들은 내용물의 width를 갖도록, 아이템들의 height는 컨테이너와 같도록 조정<br>
+                        -> 아이템들이 각기 다른 높이를 가지고 있을 때 정렬이 편리함</li>
+                </ul>
+            </li>
+
+            <div>
+                <h3>Bootstrap</h3>
+                <p>
+                    <b>반응형 웹(Respoinsive Web Design)</b><br>
+                    다양한 화면 크기를 가진 디바이스들이 등장함에 따라 반응형 웹 개념이 등장 <br>
+                    반응형 웹은 별도의 기술 이름이 아닌 웹 디자인에 대한 접근 방식, 반응형 레이아웃 작성에 도움이 되는 사례들의 모음 등을 기술하는데 사용되는 용어 <br>
+                    <b>CDN(Content Delivery(Distribution) Network)</b>
+                    컨텐츠(CSS, JS, Image, Text 등)를 효율적으로 전달하기 위해 여러 노드를 가진 네트워크에서 데이터를 제공하는 시스템 <br>
+                    개별 end-user의 가까운 서버를 통해 빠르게 전달 가능(지리적 이점), 외부 서버를 활용함으로써 본인 서버의 부하가 적어짐
+                </p>
+
+                <ul>
+                    <li>
+                        spacing : mx, my, ms, se, 
+                    </li>
+                    <img src="images/화면 캡처 2023-03-18 202410.png" alt="" style="width: 300px;">
+                    <img src="images/화면 캡처 2023-03-18 202535.png" alt="" style="width: 300px;">
+                    <li>
+                        color
+                    </li>
+                    <img src="images/화면 캡처 2023-03-18 203206.png" alt="" style="width: 300px;">
+                    <li>
+                        Grid System : 편집 디자인에서 나온 개념, 구성요소를 잘 배치해서 시작적으로 좋은 결과물을 맞추기 위함 <br>
+                        기본요소
+                        <ul>
+                            <li>Column : 실제 컨텐츠를 포함하는 부분</li>
+                            <li>Gutter : 컬럼과 컬럼 사이의 공간</li>
+                            <li>Container : Column들을 담고 있는 공간</li>
+                        </ul>
+                        flexbox로 제작됨. container, rows, colum으로 컨텐츠를 배치하고 정렬 <br>
+                        12개의 column, 6개의 grid breakpoints <br>
+                        none: &gt;576px sm: &ge;576px, md: &ge;768px lg: &ge;992px, xl: &ge;1200px, xxl: &ge;1400px <br>
+                        
+                        * Grid system breakpoints <br>
+                        <img src="/HTML/images/화면 캡처 2023-03-19 220908.png" alt="">
+                    </li>
+                </ul>
+
+                <p>cf
+                    <img src="/HTML/images/화면 캡처 2023-03-19 224043.png" alt="">
+                    <img src="/HTML/images/화면 캡처 2023-03-19 224125.png" alt="">
+                </p>
+            </div>
+
+        </ul>
+        </p>
+    </div>
+</body>
+
+</html>
