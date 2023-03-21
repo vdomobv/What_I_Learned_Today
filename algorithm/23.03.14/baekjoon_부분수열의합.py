@@ -10,8 +10,6 @@ def solve(i, val_list):
 
     if i == n:
         return
-    
-    
 
     for j in range(i, n):
         val_list.append(arr[j])

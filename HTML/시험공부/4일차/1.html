@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: black solid 1px;
+            background-color: darkred;
+            color: white;
+        }
+
+        .box1 {
+            height: 30px;
+            border: black solid 1px;
+            background-color: darkred;
+            color: white;
+        }
+
+        .parent {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+    <h2>Spacing</h2>
+    <div class="box mt-3">margin-top 3</div>
+    <div class="box mx-4 my-4">margin 4</div>
+    <div class="box mx-auto">mx-auto, 가운데 정렬</div>
+    <div class="box ms-auto">ms-auto, 오른쪽 정렬</div>
+
+    <div class="bg-primary text-start">1</div>
+    <div class="bg-secondary text-end">2</div>
+    <div class="bg-danger text-center">3</div>
+    <div class="bg-success"><a href="" class="text-decoration-none text-white">4</a></div>
+    <p class="fw-bold bg-warning">5</p>
+    <p class="fw-italic">italic</p>
+
+    <h2>Display</h2>
+    <div class="d-inline p-2 bg-primary text-white">d-inline</div>
+    <div class="d-inline p-2 bg-dark text-white">d-inline</div>
+    <span class="d-block p-2 bg-primary text-white">d-block</span>
+    <span class="d-block p-2 bg-dark text-white">d-block</span>
+    <div class="d-block bg-warning d-sm-none d-md-block">보이나?안보이나?</div>
+    <div class="d-block bg-success d-md-none d-xl-block">보이나?안보이나?</div>
+
+    <h2>Position</h2>
+    <div class="box fixed-top" style="left: auto">fixed-top</div>
+    <div class="box fixed-bottom" style="left: auto">fixed-bottom</div>
+
+    <div class="d-flex">
+        <div class="d-flex justify-content-start">...</div>
+        <div class="d-flex align-items-start">...</div>
+        <div class="d-flex">
+            <div class="align-self-start">Aligned flex item</div>
+        </div>
+    </div>
+
+    <br>
+    <div class="container">
+        <div class="row bg-success">
+            <div class="col text-center border">1</div>
+            <div class="col text-center border">2</div>
+            <div class="col text-center border">3</div>
+        </div>
+    </div>
+
+    <br>
+    <div class="container">
+        <div class="row bg-success">
+            <div class="col text-center border">1</div>
+            <div class="col text-center border">2</div>
+        </div>
+        <div class="row bg-success">
+            <div class="col text-center border">3</div>
+            <div class="col text-center border">4</div>
+        </div>
+    </div>
+
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 bg-success border">1</div>
+            <div class="col-6 bg-success border">2</div>
+            <div class="col-3 bg-success border">3</div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-1 bg-success border">1</div>
+            <div class="col-1 bg-success border">2</div>
+            <div class="col-1 bg-success border">3</div>
+            <div class="col-1 bg-success border">4</div>
+            <div class="col-1 bg-success border">5</div>
+            <div class="col-1 bg-success border">6</div>
+            <div class="col-1 bg-success border">7</div>
+            <div class="col-1 bg-success border">8</div>
+            <div class="col-1 bg-success border">9</div>
+            <div class="col-1 bg-success border">10</div>
+            <div class="col-1 bg-success border">11</div>
+            <div class="col-1 bg-success border">12</div>
+            <div class="col-1 bg-success border">13</div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-9 bg-success border">col-9</div>
+            <div class="col-4 bg-success border">col-4</div>
+            <div class="col-3 bg-success border">col-3</div>
+        </div>
+
+        <h2 class="text-center">alignment</h2>
+        <div class="row parent justify-content-center align-items-center">
+            <div class="box col-4">justify-content-center / align-items-center</div>
+        </div>
+
+        <hr>
+        <h1>flex-direction</h1>
+        <div class="container d-flex justify-content-between flex-wrap" style="height: 500px; width: 500px;">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+            <div class="box">6</div>
+        </div>
+    </div>
+
+    <br>
+    <div class="container px-0 d-flex border justify-content-around" style="height: 500px;">
+        <div class="row parent">
+            <div class="box1 col-4">1</div>
+            <div class="box1 col-4 align-self-center">2</div>
+            <div class="box1 col-4 align-self-end">3</div>
+        </div>
+    </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
