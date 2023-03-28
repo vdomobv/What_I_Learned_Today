@@ -1,39 +1,38 @@
 t = int(input())
 
-for tc in range(t):
-    num = sorted(list(map(int, list(input()))))
-    print(num)
-    run = 0
-    triplet = 0
+def solve(arr):
+    for i in set(arr):
+        if arr.count(i) >= 3:
+            return True
 
-    for i in set(num):
-        if num.count(i) == 3:
-            triplet += 1
+    tmp = 0
+    tmp_arr = sorted(set(arr))
+    for i in range(len(tmp_arr)-1):
+        if tmp_arr[i] + 1 == tmp_arr[i+1]:
+            tmp += 1
+            if tmp >= 2:
+                return True
+        else:
+            tmp = 0
+    
+    return False
+    
+for tc in range(1, t+1):
+    player1 = []
+    player2 = []
+    
+    num = list(map(int, list(input().split())))
+    print(f"#{tc} ", end="")
+    for i in range(0, 12, 2):
 
-    tmp = 1
-    for i in range(2):      
-        if num[i] + 1 == num[i+1]:
-            tmp += 1
-            if tmp == 3:
-                run += 1
-        else:
+        player1.append(num[i])
+        if len(player1) > 2 and solve(player1):
+            print(1)
             break
-    
-    tmp = 1
-    for i in range(3, 5):
-        if num[i] + 1 == num[i+1]:
-            tmp += 1
-            if tmp == 3:
-                run += 1
-        else:
+
+        player2.append(num[i+1])
+        if len(player2) > 2 and solve(player2):
+            print(2)
             break
-    
-    if triplet >= 2 or run >= 2 or (triplet and run):
-        print(True)
-        # print(triplet, run)
     else:
-        print(False)
-        # print(triplet, run)
-
-
-    
+        print(0)
