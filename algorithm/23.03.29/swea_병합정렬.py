@@ -1,5 +1,3 @@
-t = int(input())
-
 def merge_sort(left, right):
     global ans
 
@@ -8,21 +6,22 @@ def merge_sort(left, right):
     
     # 분할
     mid = (left + right) // 2
-    
+    if tmp[mid-1] > tmp[right-1]:
+        ans += 1
+
     merge_sort(left, mid)
     merge_sort(mid, right)
 
     # 결합
     l, r = left, mid
-
-    if tmp[mid-1] > tmp[-1]:
+    if arr[mid-1] > arr[right-1]:
         ans += 1
     
     for k in range(left, right):
-        if r > right:
+        if r >= right:
             tmp[k] = arr[l]
             l += 1
-        elif l > mid-1:
+        elif l >= mid:
             tmp[k] = arr[r]
             r += 1
         elif arr[l] <= arr[r]:
@@ -35,7 +34,7 @@ def merge_sort(left, right):
     for i in range(left, right):
         arr[i] = tmp[i]
         
-
+t = int(input())
 for tc in range(1, t+1):
     n = int(input())
     arr = list(map(int, input().split()))
