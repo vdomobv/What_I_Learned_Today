@@ -1,13 +1,23 @@
+from collections import deque
+
 t = int(input())
 
-def solve(n, cnt):
-    global ans
+def solve(q):
+    while q:
+        ci = q.popleft()
+        if ci == m:
+            return visited[ci]
 
-
+        for ni in (ci+1, ci-1, ci*2, ci-10):
+            if 0 <= ni < len(visited) and not visited[ni]:
+                visited[ni] = visited[ci] + 1
+                q.append(ni)
     
 
 for tc in range(1, t+1):
     n, m = map(int, input().split())
-    ans = 99999999
-    solve(n, 0)
-    print(f"#{tc} {cnt}")
+    visited = [0] * (m+11)
+    q = deque([n])
+    visited[n] = 1
+    ans = solve(q)
+    print(f"#{tc} {ans-1}")

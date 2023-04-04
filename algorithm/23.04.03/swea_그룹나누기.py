@@ -25,7 +25,7 @@ for tc in range(1, t+1):
         a, b = lst[i], lst[i+1]
         union(a, b)
         
-    cnt, left = 0, 0
+    cnt = 0
     for i in range(1, n+1):
         if t.count(i) == 0:
             continue
