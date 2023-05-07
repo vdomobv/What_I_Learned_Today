@@ -1,0 +1,45 @@
+<!-- Vue로 코드 작성하기 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 4. 선언적 렌더링 -->
+        <p id="name">name : {{message}} </p>
+        <!-- 5. input tag에 v-model 작성
+            input에 값 입력 => Vue data 반영
+            Vue data => DOM 반영
+        -->
+        <input type="text">
+    </div>
+    <!-- 1. Vue CDN 가져오기 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // 2. Vue instacne(미리 정해진 속성명을 가진 Object) 생성
+        const app = new Vue({
+            // 3. data에 관리할 속성 정의 : el, data
+            el : '#app',
+                // Vue instance와 DOM을 mount(연결)하는 옵션
+                // Vue instance와 연결되지 않은 DOM 외부는 Vue의 영향을 받지 않음
+            data : {
+                // Vue instance의 데이터 객체 혹은 인스턴스 속성
+                // 데이터 객체는 반드시 기본 객체 {}(Object)여야 함
+                // 객체 내부의 아이템들은 value로 모든 타입의 객체를 가질 수 있음
+                // 정의된 속성은 interpolation {{}} 을 통해 view에 렌더링 가능함 
+                message : '',
+            },
+            methods : {
+                // Vue instance의 method들을 정의하는 곳
+                // 주의 사항 : 메서드를 정의 할 때, Arrow Function을 사용하면 안됨.
+                // Arrow Function의 this는 함수가 선언될 때 상위 스코프를 가리켜 this가 상위 객체 window를 가리치게 됨
+            }
+        })
+    </script>
+</body>
+</html>

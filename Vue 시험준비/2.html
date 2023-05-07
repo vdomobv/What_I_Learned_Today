@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>Text interpolation : {{ msg }} </p>
+        <p v-text = "message"></p>
+        <p>rawHTML : <span v-html="rawHTML"></span> </p>
+        <p v-show="isActive">표현식에 작성된 값에 따라 element를 보여 줄 것인지 결정, 대상 element의 display속성을 기본 속성과 none으로 toggle, 요소 자체는 항상 DOM에 렌더링 됨</p>
+        <p v-if="isActive">v-show와 사용방법은 동일. 단, 값이 false인 경우 DOM에서 사라짐</p>
+        <div v-for="(char, index) in myStr">
+            <!-- 배열 역시 문자열과 동일하게 사용 가능
+                각 요소가 객체라면 dot notation으로 접근 가능 ex) item.name
+                - 반드시 key 속성을 각 요소에 작성
+                    vue 하면 구성시 이전과 달라진 점을 확인하는 용도로 활용
+                    각 요소가 고유한 값을 가지고 있다면 생략 가능
+                -->
+            <p>{{char}} </p>
+        </div>
+        <button v-on:click="number++">+</button>
+        <!-- 대기하고 있던 이벤트가 발생하면 할당된 표현식 실행
+            method를 통한 data 조작도 가능
+            @ shortcut 제공 -->
+        <p>{{number}} </p>
+        <a v-bind:href="url">Go to GOOGLE</a>
+        <!-- HTML 기본 속성에 Vue data를 연결, Vue data의 변화에 반응하여 DOM에 반영하므로 상황에 따라 유동적 할당 가능, : shortcut 제공-->
+        <p>{{myMessage}} </p>
+        <input type="text" v-model="myMessage">
+        <!-- Vue instance 와 DOM의 양방향 바인딩, Vue data 변경 시 v-model로 연결된 사용자 입력 element에도 적용 -->
+        <button @click="Newnumber++">watch ++</button>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // export default app
+        const app = new Vue({
+            el : '#app',
+            data : {
+                msg : '가장 기본적인 바인딩 방법, 중괄호 2개로 표기, DTL과 동일한 형태로 작성, 일반 텍스트로 표현',
+                message : 'Text interpolation이랑 동일한 역할',
+                rawHTML : '<span style = "color : green"> v-html directive(HTML기반 template syntax)를 사용하여 data와 바인딩 <br>사용자가 입력하거나 제공하는 컨텐츠에는 절대 사용 금지 (XSS 공격)</span>',
+                isActive : true,
+                myStr: "12345",
+                number: 0,
+                url: 'https://www.google.com/',
+                myMessage : '',
+            },
+            computed : {
+                // computed 객체에 정의한 함수를 페이지가 최초로 렌더링 될 때 호출하여 계산
+                // 계산 결과가 변하기 전까지 함수를 재호출하는 것이 아닌 계산된 값을 반환
+                // methods vs computed
+                // 함수의 종속 대상의 변화에 따라 계산 여부를 결정됨
+                // 종속 대상이 변하지 않으면 항상 저장(캐싱)된 값을 반환
+            },
+            methods : {
+                // methods vs computed
+                // 호출될 때마다 함수를 실행, 같은 결과여도 매번 새롭게 계산
+            },
+            watch : {
+                // 특정 데이터의 변화를 감지하는 기능
+                // 1. watch 객체를 정의
+                // 2. 감시할 대상 data를 지정
+                // 3. data가 변할 시 실행할 함수를 정의
+                newnumber : function(val, oldVal){
+                    console.log(val, oldVal)
+                    // 실행 함수를 Vue method로 대체 가능
+                    // 1. 감시 대상 data의 이름으로 객체 생성
+                    // 2. 실행하고자 하는 method를 handler에 문자열 형태로 할당
+                    // Array, Object의 내부 요소 변경 감지를 위해서는 deep 속성 추가 필요
+                }
+            },
+        })
+        
+    </script>
+</body>
+</html>
