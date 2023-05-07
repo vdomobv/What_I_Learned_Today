@@ -1,7 +1,7 @@
 Vue
 # 1
 Front-end 개발은 Web App 또는 Web Site의 UI/UX를 제작하고 관리하는 과정
-Front-end 프레임워크와 라이브러리(React, Angular, Vue.js)를 사용하여 개발 효율성을 높이고, Weg App의 복잡성을 관리
+Front-end 프레임워크와 라이브러리(React, Angular, Vue.js)를 사용하여 개발 효율성을 높이고, Web App의 복잡성을 관리
 Front-end 개발에 사용되는 주요 기술은 HTML, CSS, Javascript
 
 Web App : 웹 브라우저에서 실행되는 어플리케이션 소프트웨어
@@ -22,8 +22,7 @@ BE와 FE의 작업 영역을 명확히 분리할 수 있음 ⇒ 각자 맡은 �
 검색 엔진 최적화(Search Engine Optimization)가 어려움
 	서버가 제공하는 것은 텅 빈 HTML
 	내용을 채우는 것은 AJAX 요청으로 얻은 JSON 데이터로 클라이언트(브라우저)
-	⇒ 대체적으로 HTML에 작성된 내용을 기반으로 하는 검색 엔진에 빈 HTML을 
-    공유하는 SPA 서비스가 노출되기는 어려움
+	⇒ 대체적으로 HTML에 작성된 내용을 기반으로 하는 검색 엔진에 빈 HTML을 공유하는 SPA 서비스가 노출되기는 어려움
 
 CSR(Client Side Rendering)
 : 최초 한 장의 HTML을 받아오는 것은 동일, 단, server로부터 최초로 받아오는 문서는 빈 HTML, 각 요청에 대한 대응을 JavaScript를 사용하여 필요한 부분만 다시 렌더링
@@ -82,7 +81,7 @@ Vue Style Guide
             1. 목록의 항목을 필터링할 때 (v-for="user in users" v-if="user.isActive")
                 Vue가 디렉티브를 처리할 때, v-for는 v-if보다 우선순위가 높음
                 즉, user의 일부분만 렌더링 하고 싶은데도 불구하고, v-for가 우선순위를 가지기 때문에 모든 user에 대해 반복해야 함
-                => compute를 사용해서 효율적으로 렌더링 할 수 있또록 함
+                => computed를 사용해서 효율적으로 렌더링 할 수 있또록 함
             2. 숨김 목록의 렌더링을 피할 때 (v-for="user in users" v-if="shouldShowUsers") p.42
                 v-if를 컨테이너 엘리먼트로 옮기기, 한번 확인하고 shouldShowUsers가 false인 경우 v-for를 평가하지도 않음
 
@@ -138,7 +137,7 @@ Component : UI를 독립적이고 재사용 가능한 조각들로 나눈 것, �
 
 Component in Vue : 이름이 있는 재사용 가능한 Vue instance
 SFC(Single File Component)
-    하나의 .vue 파일이 하나의 Vue instance이고, 하나의 컴퓨넌트이다.
+    하나의 .vue 파일이 하나의 Vue instance이고, 하나의 컴포넌트이다.
     Vue instance에서는 HTML, CSS, JavaScript 코드를 한번에 관리
     기능 단위로 작성하는 것이 핵심
 
@@ -152,7 +151,7 @@ props
 - 요소에 속성을 작성하듯이 사용 가능 prop-data-name = "value" (kebab-case)
 - 중요 *
     부모에서 넘겨주는 props : kebab-case
-    자식에서 받는 props : camleCase
+    자식에서 받는 props : camelCase
 - 각 vue 인스턴스는 같은 data 객체를 공유하므로 새로운 data 객체를 반환하여 사용해야 함
 - 단방향 데이터 흐름 : 모든 props는 부모에서 자식으로 단방향 바인딩을 형성, 부모 속성 업데이트 자식으로 흐름, 반대는 아님
     <= 하위 컴포넌트가 실수로 상위 컴포넌트 상태를 변경하여 앱의 데이터 흐름을 이해하기 힘들게 만드는 것을 방지
