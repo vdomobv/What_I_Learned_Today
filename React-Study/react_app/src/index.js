@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Switch, NavLink, useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import WithoutRedux from './components/without-redux';
 
 function App() {
   return (
@@ -13,14 +14,13 @@ function App() {
       <ul>
         <li><NavLink exact to='/'>Home</NavLink></li>
         <li><NavLink to='/topics'>Topics</NavLink></li>
-        <li><NavLink to='/contact'>Contact</NavLink></li>
+        <li><NavLink to='/withoutRedux'>withoutRedux</NavLink></li>
       </ul>
       <Switch>
         <Route exact path="/"><Home></Home></Route>
         <Route path="/topics"><Topics></Topics></Route>
-        <Route path="/contact"><Contact></Contact></Route>
+        <Route path="/withoutRedux"><WithoutRedux></WithoutRedux></Route>
         <Route path="/">Not Found</Route>
-
       </Switch>
     </div>
   )
@@ -84,14 +84,7 @@ function Topic() {
     </div>
   )
 }
-function Contact() {
-  return (
-    <div>
-      <h2>Contact</h2>
-      Contact is ...
-    </div>
-  )
-}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
