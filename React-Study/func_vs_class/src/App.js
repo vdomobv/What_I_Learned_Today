@@ -2,10 +2,15 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 
 function App() {
+  var [funcShow, setFuncShow ] = useState(true);
+
   return (
     <div className="container">
       <h1>Hello World</h1>
-      <FuncComp initNumber={2}></FuncComp>
+      <input type="button" value="remove func" onClick={function () {
+        setFuncShow(false);
+      }}></input>
+      { funcShow ? <FuncComp initNumber={2}></FuncComp> : null}
       <ClassComp initNumber={2}></ClassComp>
     </div>
   );
@@ -20,9 +25,28 @@ function FuncComp(props) {
   var [ _date, setDate] = useState((new Date()).toString());
 
   useEffect(function () {
-    console.log('%cfunc ==> useEffect (compononetDidMount & componentDidUpdate)' + (++funcId), "color:blue")
+    console.log('%cfunc ==> useEffect number (compononetDidMount)' + (++funcId), "color:blue")
     document.title = number + ' : ' + _date
-  })
+    return function(){
+      console.log('%cfunc => useEffect number return (componentWillUnMount)' + (++funcId), "color:blue")
+    }
+  }, [])
+
+  useEffect(function () {
+    console.log('%cfunc ==> useEffect number (compononetDidMount & componentDidUpdate)' + (++funcId), "color:blue")
+    document.title = number + ' : ' + _date
+    return function(){
+      console.log('%cfunc => useEffect number return (compononetDidMount & componentDidUpdate)' + (++funcId), "color:blue")
+    }
+  }, [number])
+
+  // useEffect(function () {
+  //   console.log('%cfunc ==> useEffect date (compononetDidMount & componentDidUpdate)' + (++funcId), "color:blue")
+  //   document.title =  _date
+  //   return function(){
+  //     console.log('%cfunc => useEffect date return (compononetDidMount & componentDidUpdate)' + (++funcId), "color:blue")
+  //   }
+  // }, [_date])
 
   console.log('%cfunc ==> render' + (++funcId), "color:blue")
   return (
