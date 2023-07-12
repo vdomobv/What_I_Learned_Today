@@ -4,6 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Switch, NavLink, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import WithoutRedux from './components/without-redux';
+import WithRedux from './components/with-redux';
 
 function App() {
   return (
@@ -14,12 +15,14 @@ function App() {
       <ul>
         <li><NavLink exact to='/'>Home</NavLink></li>
         <li><NavLink to='/topics'>Topics</NavLink></li>
-        <li><NavLink to='/withoutRedux'>withoutRedux</NavLink></li>
+        <li><NavLink exact to='/withRedux'>withRedux</NavLink></li>
+        <li><NavLink exact to='/withoutRedux'>withoutRedux</NavLink></li>
       </ul>
       <Switch>
         <Route exact path="/"><Home></Home></Route>
         <Route path="/topics"><Topics></Topics></Route>
         <Route path="/withoutRedux"><WithoutRedux></WithoutRedux></Route>
+        <Route path="/withRedux"><WithRedux></WithRedux></Route>
         <Route path="/">Not Found</Route>
       </Switch>
     </div>

@@ -42,7 +42,7 @@ class WithoutRedux extends Component {
 
     return (
       <div className="container" id="component_blue">
-        <h1>green</h1>
+        <h1>blue</h1>
         <input type="button" value="fire" onClick={fire}></input>
       </div>
     );
